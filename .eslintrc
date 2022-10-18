@@ -1,19 +1,22 @@
 {
   "extends": [
-    "plugin:bpmn-io/es6",
+    "plugin:bpmn-io/browser",
     "plugin:bpmn-io/jsx"
   ],
   "rules": {
-    "import/first": "error",
-    "import/no-amd": "error",
-    "import/no-webpack-loader-syntax": "error",
-    "react-hooks/exhaustive-deps": "off"
+    "import/first": "error"
   },
   "plugins": [
     "import"
   ],
-  "env": {
-    "browser": true,
-    "es6": true
-  }
+  "overrides": [
+    {
+      "files": [
+        "karma.config.js"
+      ],
+      "extends": [
+        "plugin:bpmn-io/node"
+      ]
+    }
+  ]
 }
