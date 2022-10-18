@@ -18,7 +18,7 @@
     "test:watch": "npm test -- --auto-watch --no-single-run"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.14.3",
     "@babel/plugin-transform-react-jsx": "^7.14.3",
