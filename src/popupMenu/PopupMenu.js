@@ -15,6 +15,7 @@ import SearchIcon from '../../assets/icons/search.svg';
 /**
  * A preact component that renders the popup menus.
  *
+ * TODO: document this
  * @param {any} props
  */
 export default function PopupMenu(props) {
@@ -104,32 +105,29 @@ export default function PopupMenu(props) {
     [ entries, selectedEntry ]
   );
 
-  const handleKeyDown = useCallback(
-    event => {
-      if (event.key === 'Enter' && selectedEntry) {
-        return onSelect(event, selectedEntry);
-      }
+  const handleKeyDown = event => {
+    if (event.key === 'Enter' && selectedEntry) {
+      return onSelect(event, selectedEntry);
+    }
 
-      if (event.key === 'Escape') {
-        return onClose();
-      }
+    if (event.key === 'Escape') {
+      return onClose();
+    }
 
-      // ARROW_UP or SHIFT + TAB navigation
-      if (event.key === 'ArrowUp' || (event.key === 'Tab' && event.shiftKey)) {
-        keyboardSelect(-1);
+    // ARROW_UP or SHIFT + TAB navigation
+    if (event.key === 'ArrowUp' || (event.key === 'Tab' && event.shiftKey)) {
+      keyboardSelect(-1);
 
-        return event.preventDefault();
-      }
+      return event.preventDefault();
+    }
 
-      // ARROW_DOWN or TAB navigation
-      if (event.key === 'ArrowDown' || event.key === 'Tab') {
-        keyboardSelect(1);
+    // ARROW_DOWN or TAB navigation
+    if (event.key === 'ArrowDown' || event.key === 'Tab') {
+      keyboardSelect(1);
 
-        return event.preventDefault();
-      }
-    },
-    [ selectedEntry, keyboardSelect ]
-  );
+      return event.preventDefault();
+    }
+  };
 
   const handleKey = useCallback(event => {
     setValue(() => event.target.value);
