@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "plugin:bpmn-io/browser",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "import/first": "error"
+  },
+  "plugins": [
+    "import"
+  ]
+}
