@@ -5,7 +5,8 @@
   "scripts": {
     "all": "run-s lint",
     "lint": "eslint .",
-    "test": "karma start"
+    "test": "karma start",
+    "dev": "karma start --auto-watch --no-single-run"
   },
   "repository": {
     "type": "git",
