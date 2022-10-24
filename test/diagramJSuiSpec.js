@@ -47,14 +47,14 @@ describe('diagramJSui', function() {
   it('#render - custom component', inject(function(diagramJSui) {
 
     // given
-    function CustomComponent({ html }) {
-      return html`<div>Hello world!</div>`;
+    function CustomComponent(props) {
+      return diagramJSui.html`<div>Hello world!</div>`;
     }
 
     // when
     diagramJSui.render(
       diagramJSui.html`
-        <${CustomComponent} html=${diagramJSui.html} />
+        <${CustomComponent} />
       `,
       document.body
     );
