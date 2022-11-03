@@ -16,7 +16,7 @@ The module can be injected into other modules. It allows to render a Preact comp
 
 ```javascript 
 function CustomComponent(diagramJsUi) {
-  const { useState } = diagramJsUi.getHoooks();
+  const { useState } = diagramJsUi.getHooks();
   const counter = useState(0);
 
   diagramJsUi.render(
