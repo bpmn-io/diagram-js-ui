@@ -1,61 +1,44 @@
-import diagramJSuiModule from '../';
-
-import {
-  bootstrapDiagram,
-  inject
-} from 'diagram-js/test/helper';
+import { html, render } from '../lib/diagramJSui';
 
 
 describe('diagramJSui', function() {
 
-  beforeEach(bootstrapDiagram({
-    modules: [ diagramJSuiModule ]
-  }));
-
-
-  it('should bootstrap with module', inject(function(diagramJSui) {
-    expect(diagramJSui).not.to.be.undefined;
-  }));
-
-
-  it('#html', inject(function(diagramJSui) {
+  it('#html', function() {
 
     // given
-    const htmlElement = diagramJSui.html`<div>Hello world!</div>`;
+    const htmlElement = html`<div>Hello world!</div>`;
 
     expect(htmlElement).to.exist;
     expect(htmlElement.type).to.equal('div');
-  }));
+  });
 
 
-  it('#render', inject(function(diagramJSui) {
+  it('#render', function() {
 
     // given
-    const htmlElement = diagramJSui.html`<div>Hello world!</div>`;
+    const htmlElement = html`<div>Hello world!</div>`;
 
     // when
-    diagramJSui.render(htmlElement, document.body);
+    render(htmlElement, document.body);
 
     // expect
     const div = document.querySelector('div');
     expect(div).to.exist;
     expect(div.innerText).to.eql('Hello world!');
 
-  }));
+  });
 
 
-  it('#render - custom component', inject(function(diagramJSui) {
+  it('#render - custom component', function() {
 
     // given
-    function CustomComponent(props) {
-      return diagramJSui.html`<div>Hello world!</div>`;
+    function CustomComponent() {
+      return html`<div>Hello world!</div>`;
     }
 
     // when
-    diagramJSui.render(
-      diagramJSui.html`
-        <${CustomComponent} />
-      `,
+    render(
+      html`<${CustomComponent} />`,
       document.body
     );
 
@@ -64,23 +47,6 @@ describe('diagramJSui', function() {
     expect(div).to.exist;
     expect(div.innerText).to.eql('Hello world!');
 
-  }));
-
-
-  it('#getHooks', inject(function(diagramJSui) {
-
-    // given
-    const hooks = diagramJSui.getHooks();
-
-    // expect
-    expect(Object.keys(hooks)).to.have.members([
-      'useRef',
-      'useLayoutEffect',
-      'useCallback',
-      'useEffect',
-      'useState'
-    ]);
-
-  }));
+  });
 
 });
