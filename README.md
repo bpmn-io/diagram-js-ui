@@ -7,7 +7,7 @@ A wrapper around [`htm/preact`](https://github.com/developit/htm#usage) that exp
 
 ## Usage
 
-This module is available through `diagram-js/lib/ui`. Use it to create and mount your [Preact](https://preactjs.com/) components and render them through the [htm utility](https://github.com/developit/htm).
+This module is available through `diagram-js/lib/ui`. Use it to create and mount your [Preact](https://preactjs.com/) components and render them through the [`htm` utility](https://github.com/developit/htm).
 
 ```javascript
 // MyService.js
