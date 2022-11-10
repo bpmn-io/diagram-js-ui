@@ -1,13 +1,5 @@
 {
   "extends": [
-    "plugin:bpmn-io/browser",
-    "plugin:bpmn-io/node",
-    "plugin:react-hooks/recommended"
-  ],
-  "rules": {
-    "import/first": "error"
-  },
-  "plugins": [
-    "import"
+    "plugin:bpmn-io/browser"
   ]
 }
