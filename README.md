@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/bpmn-io/diagram-js-ui/actions/workflows/CI.yml/badge.svg)](https://github.com/bpmn-io/diagram-js-ui/actions/workflows/CI.yml)
 
-A wrapper around [`htm/preact`](https://github.com/developit/htm#usage) that exposes components for building reactive HTML widgets in the context of diagram-js (core) + extensions.
+A wrapper around [`htm/preact`](https://github.com/developit/htm#usage) that exposes components for building reactive HTML widgets in the context of [diagram-js](https://github.com/bpmn-io/diagram-js) and extensions.
 
 
 ## Usage
