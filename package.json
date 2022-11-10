@@ -4,8 +4,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib",
-    "index.js"
+    "lib"
   ],
   "scripts": {
     "all": "run-s lint test",
