@@ -1,6 +1,7 @@
 # diagram-js-ui
 
-This library provides a building block for creating and rendering Preact components in the context of the bpmn.io tools without directly importing Preact.
+A wrapper around [`htm/preact`](https://github.com/developit/htm#usage) that exposes components for building reactive HTML widgets in the context of diagram-js (core) + extensions.
+
 
 ## Getting started
 ```sh
