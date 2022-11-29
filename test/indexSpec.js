@@ -1,4 +1,12 @@
-import { html, render, useState } from '..';
+import {
+  html,
+  render,
+  h,
+  Component,
+  useState,
+  useCallback,
+  useLayoutEffect
+} from '..';
 
 
 describe('diagram-js-ui', function() {
@@ -6,7 +14,11 @@ describe('diagram-js-ui', function() {
   Object.entries({
     html,
     render,
-    useState
+    Component,
+    h,
+    useState,
+    useCallback,
+    useLayoutEffect
   }).map(([ name, value ]) => {
 
     it(`should export ${ name }`, function() {
