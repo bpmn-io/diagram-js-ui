@@ -6,6 +6,10 @@ All notable changes to [diagram-js-ui](https://github.com/bpmn-io/diagram-js-ui)
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.2.1
+
+* `FIX`: do not double-export `Preact`
+
 ## 0.2.0
 
 * `FEAT`: align exports with `htm/preact` (standalone)
