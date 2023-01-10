@@ -1,30 +1,45 @@
-import {
-  html,
-  render,
-  h,
-  Component,
-  useState,
-  useCallback,
-  useLayoutEffect
-} from '..';
+import * as preactExports from 'preact';
+import * as preactHooksExports from 'preact/hooks';
+
+import * as htmExports from 'htm/preact';
+
+import * as duiExports from '..';
 
 
 describe('diagram-js-ui', function() {
 
-  Object.entries({
-    html,
-    render,
-    Component,
-    h,
-    useState,
-    useCallback,
-    useLayoutEffect
-  }).map(([ name, value ]) => {
+  describe('preact exports', function() {
 
-    it(`should export ${ name }`, function() {
-      expect(value, `export <${ name }>`).to.exist;
-    });
+    verifyExports(preactExports);
+
+  });
+
+
+  describe('preact/hooks exports', function() {
+
+    verifyExports(preactHooksExports);
+
+  });
+
+
+  describe('htm exports', function() {
+
+    verifyExports(htmExports);
 
   });
 
 });
+
+
+// helpers //////////////
+
+function verifyExports(expectedExports) {
+
+  Object.entries(expectedExports).map(([ name, value ]) => {
+
+    it(`should export ${ name }`, function() {
+      expect(duiExports[name], `export <${ name }>`).to.equal(value);
+    });
+  });
+
+}
