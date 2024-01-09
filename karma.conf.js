@@ -2,7 +2,10 @@
 
 // configures browsers to run test against
 // any of [ 'Chrome', 'Firefox' ]
-var browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');
+const browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');
+
+// use puppeteer provided Chrome for testing
+process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function(karma) {
 
