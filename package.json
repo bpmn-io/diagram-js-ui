@@ -17,10 +17,11 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "all": "run-s lint test",
-    "test": "karma start",
-    "dev": "karma start --auto-watch --no-single-run"
+    "all": "run-s lint test check-types",
+    "check-types": "tsc --noEmit",
     "lint": "eslint . --ext cjs,js",
+    "test": "karma start karma.conf.cjs",
+    "dev": "npm test -- --auto-watch --no-single-run"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,10 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^4.3.12",
+    "@types/karma-chai": "^0.1.6",
+    "@types/karma-mocha": "^1.3.4",
+    "@types/mocha": "^10.0.6",
     "eslint": "^8.56.0",
     "eslint-plugin-bpmn-io": "^1.0.0",
     "karma": "^6.4.1",
@@ -45,7 +50,8 @@
     "puppeteer": "^22.0.0",
     "sinon": "^17.0.0",
     "sinon-chai": "^3.7.0",
-    "webpack": "^5.74.0"
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3"
   },
   "dependencies": {
     "htm": "^3.1.1",
