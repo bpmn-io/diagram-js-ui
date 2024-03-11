@@ -6,6 +6,12 @@ All notable changes to [diagram-js-ui](https://github.com/bpmn-io/diagram-js-ui)
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.2.3
+
+* `FIX`: correct type exports
+* `FIX`: turn into an actual module
+* `CHORE`: add package `exports` declaration
+
 ## 0.2.2
 
 * `FIX`: export full `Preact` export (again) ([#11](https://github.com/bpmn-io/diagram-js-ui/pull/11))
