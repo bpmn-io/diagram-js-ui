@@ -3,7 +3,7 @@ import * as preactHooksExports from 'preact/hooks';
 
 import * as htmExports from 'htm/preact';
 
-import * as duiExports from '..';
+import * as duiExports from '@bpmn-io/diagram-js-ui';
 
 
 describe('diagram-js-ui', function() {
@@ -33,13 +33,17 @@ describe('diagram-js-ui', function() {
 
 // helpers //////////////
 
+/**
+ * @param {Record<string, any>} expectedExports
+ */
 function verifyExports(expectedExports) {
 
   Object.entries(expectedExports).map(([ name, value ]) => {
 
     it(`should export ${ name }`, function() {
-      expect(duiExports[name], `export <${ name }>`).to.equal(value);
+      expect(/** @type { any } */ (duiExports)[name], `export <${ name }>`).to.equal(value);
     });
+
   });
 
 }

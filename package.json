@@ -1,18 +1,26 @@
 {
   "name": "@bpmn-io/diagram-js-ui",
   "version": "0.2.2",
+  "type": "module",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "lib"
   ],
   "sideEffects": false,
   "scripts": {
     "all": "run-s lint test",
-    "lint": "eslint .",
     "test": "karma start",
     "dev": "karma start --auto-watch --no-single-run"
+    "lint": "eslint . --ext cjs,js",
   },
   "repository": {
     "type": "git",
