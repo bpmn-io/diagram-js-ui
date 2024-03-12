@@ -18,7 +18,7 @@
   "sideEffects": false,
   "scripts": {
     "all": "run-s lint test check-types",
-    "check-types": "tsc --noEmit",
+    "check-types": "tsc --noEmit --noImplicitAny",
     "lint": "eslint . --ext cjs,js",
     "test": "karma start karma.conf.cjs",
     "dev": "npm test -- --auto-watch --no-single-run"
