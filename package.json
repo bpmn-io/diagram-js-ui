@@ -19,7 +19,7 @@
   "scripts": {
     "all": "run-s lint test check-types",
     "check-types": "tsc --noEmit --noImplicitAny",
-    "lint": "eslint . --ext cjs,js",
+    "lint": "eslint .",
     "test": "karma start karma.conf.cjs",
     "dev": "npm test -- --auto-watch --no-single-run"
   },
@@ -38,7 +38,7 @@
     "@types/karma-mocha": "^1.3.4",
     "@types/mocha": "^10.0.6",
     "eslint": "^9.0.0",
-    "eslint-plugin-bpmn-io": "^2.0.0",
+    "eslint-plugin-bpmn-io": "^2.0.2",
     "karma": "^6.4.1",
     "karma-chrome-launcher": "^3.1.1",
     "karma-firefox-launcher": "^2.1.2",
