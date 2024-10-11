@@ -1,4 +1,3 @@
-// eslint-disable-next-line spaced-comment
 /// <reference types="webpack/module.d.ts" />
 
 const allTests = import.meta.webpackContext('.', {
