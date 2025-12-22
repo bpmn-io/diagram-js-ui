@@ -5,15 +5,20 @@
 const browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');
 
 // use puppeteer provided Chrome for testing
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+if (!process.env.CHROME_BIN) {
+  try {
+    process.env.CHROME_BIN = require('puppeteer').executablePath();
+  } catch (e) {
+    // puppeteer not installed, keep existing CHROME_BIN
+  }
+}
 
 module.exports = function(karma) {
 
   karma.set({
     frameworks: [
       'webpack',
-      'mocha',
-      'sinon-chai'
+      'mocha'
     ],
 
     files: [
@@ -34,7 +39,15 @@ module.exports = function(karma) {
     autoWatch: false,
 
     webpack: {
-      mode: 'development'
+      mode: 'development',
+      module: {
+        rules: [
+          {
+            test: /test\/globals\.js$/,
+            sideEffects: true
+          }
+        ]
+      }
     }
   });
 
