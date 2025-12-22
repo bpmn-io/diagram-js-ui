@@ -9,7 +9,8 @@ if (!process.env.CHROME_BIN) {
   try {
     process.env.CHROME_BIN = require('puppeteer').executablePath();
   } catch (e) {
-    // puppeteer not installed, keep existing CHROME_BIN
+    // puppeteer not installed or not properly configured
+    console.warn('Puppeteer not available, using system Chrome');
   }
 }
 
