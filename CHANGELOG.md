@@ -6,6 +6,10 @@ All notable changes to [diagram-js-ui](https://github.com/bpmn-io/diagram-js-ui)
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.2.4
+
+* `FEAT`: update to `preact@10.29.2`
+
 ## 0.2.3
 
 * `FIX`: correct type exports
